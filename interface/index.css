@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(0, 0, 0);
+}
+.mainContainter {
+    position: relative;
+    width: 100%; /* O el ancho que desees */
+    height: 700px; /* O la altura que desees */
+}
+h1{
+    color: white;
+    padding: 50px 50px;
+    position: absolute;
+    top: 35%; /* Sitúa el elemento en la mitad superior del contenedor */
+    left: 50%; /* Sitúa el elemento en la mitad izquierda del contenedor */
+    transform: translate(-50%, -50%); /* Centra el elemento */
+
+}
+.button {
+    background-color: rgb(8, 95, 5);
+    padding: 10px 15px;
+    position: absolute;
+    top: 55%; /* Mantener en la misma posición vertical */
+    left: 50%; /* Mantener en la misma posición horizontal */
+    transform: translate(-50%, -50%); /* Centrar el elemento */
+    cursor: pointer;
+    color: rgba(7, 4, 4, 0.97);
+    text-decoration: none;
+    border: none; /* Quitar el borde */
+    border-radius: 5px; /* Agregar bordes redondeados */
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: rgb(22, 216, 15);
+}
+
+.fie_image {
+    padding: 50px 50px;
+    position: absolute;
+    top: 20%; /* Sitúa el elemento en la mitad superior del contenedor */
+    left: 50%; /* Sitúa el elemento en la mitad izquierda del contenedor */
+    transform: translate(-50%, -50%); /* Centra el elemento */
+    opacity: 0.7;
+}
+
+footer {
+    color: black;
+    padding: 10px 0; /* Ajusta el relleno superior e inferior según sea necesario */
+    text-align: center; /* Centra el texto */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(204, 203, 203, 0.756); /* Fondo blanco */
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Línea delgada de fondo */
+}

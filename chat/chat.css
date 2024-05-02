@@ -1,0 +1,54 @@
+body{
+    background-color: rgb(0, 0, 0);
+}
+.mainContainter {
+    position: relative;
+    width: 100%; /* O el ancho que desees */
+    height: 550px; /* O la altura que desees */
+}
+.back_image {
+    position: fixed; /* Para que la imagen se mantenga en la misma posición en la ventana del navegador */
+    top: 0; /* Colocar en la parte superior de la ventana */
+    left: 0; /* Colocar en la parte izquierda de la ventana */
+    cursor: pointer;
+    z-index: 999;
+}
+
+
+.messageInputContainer {
+    position: fixed;
+    bottom: 0;
+    left: 10px;
+    width: 95%;
+    display: flex;
+}
+
+.message_input {
+    flex: 1; /* El campo de texto ocupa todo el espacio restante */
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.send_image {
+    cursor: pointer;
+}
+
+.messageArea {
+    position: fixed;
+    top: 20px; /* Ajusta la posición vertical según tus necesidades */
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    overflow-y: auto; /* Agrega scroll vertical si los mensajes exceden el área visible */
+    background-color: rgba(255, 255, 255, 0.1); /* Ajusta el color de fondo según tus preferencias */
+    padding: 10px;
+    color: white;
+}
+
+.answer{
+    background-color: rgba(117, 122, 120, 0.786);
+}
+.response{
+    background-color: rgb(47, 115, 107);
+}
