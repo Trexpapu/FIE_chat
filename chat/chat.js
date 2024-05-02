@@ -13,13 +13,11 @@ function GetInformation() {
             }
         })
         .then(data => {
-            // Aquí puedes trabajar con los datos recibidos del servidor
-            console.log(data);
+            
             AddResponseToArea(data.response);
         })
         .catch(error => {
-            // Manejar errores de la solicitud fetch
-            console.error('Error de fetch:', error);
+            
             AddResponseToArea("Hubo un problema, inténtelo de nuevo más tarde");
         });
 }
