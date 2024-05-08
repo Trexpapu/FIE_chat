@@ -1,9 +1,9 @@
 var ListMessages = []
 const API = "http://127.0.0.1:8000/chatbot"
-
-function GetInformation() {
+InitialMessage = false
+async function GetInformation() {
     // Realizar la solicitud fetch de manera asíncrona
-    fetch(API)
+    await fetch(API)
         .then(response => {
             if (response.ok) {
                 // Si la respuesta es exitosa, convertir la respuesta a JSON
@@ -22,28 +22,32 @@ function GetInformation() {
         });
 }
 
-window.onload = function(){
-    GetInformation();
+window.onload = async function(){
+    await GetInformation();
+    InitialMessage = true
 }
 
 
 function SendMessage(){
     let InputMessage = document.getElementById("message");
     let message = InputMessage.value;
-    if(message != ""){
-        ListMessages.push(message);
-        // Crear un nuevo elemento div para el mensaje
-        var messageDiv = document.createElement("div");
-        messageDiv.textContent = message;
-        messageDiv.classList.add("answer");
+    if (InitialMessage){
+        if(message != ""){
+            ListMessages.push(message);
+            // Crear un nuevo elemento div para el mensaje
+            var messageDiv = document.createElement("div");
+            messageDiv.textContent = message;
+            messageDiv.classList.add("answer");
+        
+            // Agregar el nuevo elemento al contenedor de mensajes
+            var messageArea = document.querySelector(".messageArea");
+            messageArea.appendChild(messageDiv);
+        
+            // Desplazar el área de mensajes hacia abajo para mostrar el nuevo mensaje
+           
+            ResponseMessage(message)
     
-        // Agregar el nuevo elemento al contenedor de mensajes
-        var messageArea = document.querySelector(".messageArea");
-        messageArea.appendChild(messageDiv);
-    
-        // Desplazar el área de mensajes hacia abajo para mostrar el nuevo mensaje
-       
-        ResponseMessage(message)
+        }
 
     }
     
@@ -51,7 +55,7 @@ function SendMessage(){
 }
 
 
-function ResponseMessage(message){
+async function ResponseMessage(message){
     // Configurar el objeto de opciones para la solicitud POST
     let options = {
         method: 'POST',
@@ -62,7 +66,7 @@ function ResponseMessage(message){
     };
 
     // Realizar la solicitud fetch a la URL deseada
-    fetch(API, options)
+    await fetch(API, options)
     .then(response => {
         if (response.ok) {
             // Convertir la respuesta JSON en un objeto JavaScript
